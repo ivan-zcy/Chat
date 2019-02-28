@@ -2,6 +2,7 @@
 
 int main() {
 
+
 	//取得配置信息路径
 	char conf_file_client[20] = "./User.conf";
 
