@@ -7,12 +7,15 @@ if [ "$1" = "DEBUG" ];then
     cd ../list/
     g++ list.cpp -D DEBUG -c
 
+    cd ../rwt/
+    g++ rwt.cpp -D DEBUG -c
+
     cd ..
     g++ Socket.cpp -D DEBUG -c
     g++ User.cpp -D DEBUG -c
 
     g++ User.o common/common.o -o User
-    g++ Socket.o common/common.o list/list.o -o Socket
+    g++ Socket.o common/common.o list/list.o rwt/rwt.o -o Socket
 else
     cd common/
     g++ common.cpp -c
@@ -20,10 +23,13 @@ else
     cd ../list/
     g++ list.cpp -c
 
+    cd ../rwt/
+    g++ rwt.cpp -c
+
     cd ..
     g++ Socket.cpp -c
     g++ User.cpp -c
 
     g++ User.o common/common.o -o User
-    g++ Socket.o common/common.o list/list.o -o Socket
+    g++ Socket.o common/common.o list/list.o rwt/rwt.o -o Socket
 fi 
